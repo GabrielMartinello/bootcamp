@@ -1,4 +1,4 @@
-package br.com.bootcamp.Exercicio1.Exercicio2.Soma.Calculadora;
+package br.com.bootcamp.exer2.Calculadora;
 
 public class Calculadora {
 

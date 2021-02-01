@@ -1,4 +1,4 @@
-package br.com.bootcamp.Exercicio1.Endereco;
+package br.com.bootcamp.exer1.endereco;
 
 public class Endereco {
     private String  endereco;

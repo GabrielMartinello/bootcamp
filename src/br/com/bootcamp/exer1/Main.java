@@ -1,7 +1,9 @@
-import br.com.bootcamp.Exercicio1.Endereco.Endereco;
-import br.com.bootcamp.Exercicio1.Pessoa.Pessoa;
-import br.com.bootcamp.Exercicio1.Telefones.Telefone;
-import br.com.bootcamp.Exercicio1.Telefones.TipoTelefone;
+package br.com.bootcamp.exer1;
+
+import br.com.bootcamp.exer1.Pessoa.Pessoa;
+import br.com.bootcamp.exer1.endereco.Endereco;
+import br.com.bootcamp.exer1.Telefones.Telefone;
+import br.com.bootcamp.exer1.Telefones.TipoTelefone;
 
 import java.util.Arrays;
 

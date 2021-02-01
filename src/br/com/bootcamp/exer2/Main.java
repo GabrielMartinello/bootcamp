@@ -1,6 +1,6 @@
-package br.com.bootcamp.Exercicio1.Exercicio2.Soma;
+package br.com.bootcamp.exer2;
 
-import br.com.bootcamp.Exercicio1.Exercicio2.Soma.Calculadora.Calculadora;
+import br.com.bootcamp.exer2.Calculadora.Calculadora;
 
 public class Main {
 
