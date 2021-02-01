@@ -1,11 +1,9 @@
-package Exercicio1.Pessoa;
+package br.com.bootcamp.Exercicio1.Pessoa;
 
-import Exercicio1.Endereco.Endereco;
-import Exercicio1.Telefones.Telefone;
-import Exercicio1.Telefones.TipoTelefone;
+import br.com.bootcamp.Exercicio1.Endereco.Endereco;
+import br.com.bootcamp.Exercicio1.Telefones.Telefone;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Pessoa {

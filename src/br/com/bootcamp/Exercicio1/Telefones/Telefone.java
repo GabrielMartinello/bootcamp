@@ -1,4 +1,4 @@
-package Exercicio1.Telefones;
+package br.com.bootcamp.Exercicio1.Telefones;
 
 public class Telefone {
     private String telefone;
