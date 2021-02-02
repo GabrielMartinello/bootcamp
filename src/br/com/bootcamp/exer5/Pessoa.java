@@ -1,4 +1,4 @@
-package br.com.bootcamp.exer5Herança;
+package br.com.bootcamp.exer5;
 
 public class Pessoa {
     private String nome;

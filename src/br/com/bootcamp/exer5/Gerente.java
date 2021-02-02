@@ -1,4 +1,4 @@
-package br.com.bootcamp.exer5Herança;
+package br.com.bootcamp.exer5;
 
 import java.util.ArrayList;
 import java.util.List;
