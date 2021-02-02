@@ -15,5 +15,8 @@ public class Main {
             System.out.println("Pessoa atual " + pessoaAtual);
         }
 
+        grupoDePessoas.menorIdade();
+        grupoDePessoas.maiorIdade();
+
     }
 }
