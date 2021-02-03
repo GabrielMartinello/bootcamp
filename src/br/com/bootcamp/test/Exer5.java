@@ -1,14 +1,14 @@
 package br.com.bootcamp.test;
 
-import br.com.bootcamp.model.Empregado;
-import br.com.bootcamp.model.EmpregadoComissionado;
-import br.com.bootcamp.model.Gerente;
-import br.com.bootcamp.model.Pessoa3;
+import br.com.bootcamp.exer5.model.Empregado;
+import br.com.bootcamp.exer5.model.EmpregadoComissionado;
+import br.com.bootcamp.exer5.model.Gerente;
+import br.com.bootcamp.exer5.model.Pessoa;
 
 public class Exer5 {
 
     public static void main(String[] args) {
-        Pessoa3 pessoa = new Empregado("Gabriel Borrichello", "090.497.639-44",
+        Pessoa pessoa = new Empregado("Gabriel Borrichello", "090.497.639-44",
                 1000., 400.);
 
         System.out.println(((Empregado) pessoa).mostrarCpf());

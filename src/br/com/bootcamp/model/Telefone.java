@@ -2,19 +2,19 @@ package br.com.bootcamp.model;
 
 public class Telefone {
     private String telefone;
-    private TipoTelefone tipoTelefone;
+    private TipoTelefoneExer1 tipoTelefone;
 
-    public Telefone(String telefone, TipoTelefone tipoTelefone)
+    public Telefone(String telefone, TipoTelefoneExer1 tipoTelefone)
     {
         this.telefone = telefone;
         this.tipoTelefone = tipoTelefone;
     }
 
-    public TipoTelefone getTipoTelefone() {
+    public TipoTelefoneExer1 getTipoTelefone() {
         return tipoTelefone;
     }
 
-    public void setTipoTelefone(TipoTelefone tipoTelefone) {
+    public void setTipoTelefone(TipoTelefoneExer1 tipoTelefone) {
         this.tipoTelefone = tipoTelefone;
     }
 
