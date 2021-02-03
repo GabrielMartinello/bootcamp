@@ -1,6 +1,6 @@
 package br.com.bootcamp.test;
 
-import br.com.bootcamp.model.ContaCorrente;
+import br.com.bootcamp.exer6.ContaCorrente;
 
 import java.math.BigDecimal;
 
