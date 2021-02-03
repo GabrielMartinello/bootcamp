@@ -2,13 +2,12 @@ package br.com.bootcamp.exer6;
 
 import java.math.BigDecimal;
 
-abstract class ContaBancaria {
+abstract class Conta implements Imprimivel{
     private String numeroConta;
-    private BigDecimal saldo;
+    protected BigDecimal valorSaldo = BigDecimal.ZERO;
 
-    public ContaBancaria(String numeroConta, BigDecimal saldo) {
+    public Conta(String numeroConta) {
         this.numeroConta = numeroConta;
-        this.saldo = saldo;
     }
 
     public abstract void sacar(BigDecimal valor);
@@ -19,17 +18,13 @@ abstract class ContaBancaria {
         return numeroConta;
     }
 
-    public BigDecimal getSaldo() {
-        return saldo;
-    }
-
-    public void setSaldo(BigDecimal saldo) {
-        this.saldo = saldo;
+    public BigDecimal getValorSaldo() {
+        return valorSaldo;
     }
 
     @Override
     public String toString() {
         return "numeroConta = " + numeroConta +
-                ", saldo = " + saldo;
+                ", saldo = " + BigDecimalUtil.setScale(valorSaldo);
     }
 }

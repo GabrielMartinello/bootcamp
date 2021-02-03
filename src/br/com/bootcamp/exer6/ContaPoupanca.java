@@ -2,33 +2,47 @@ package br.com.bootcamp.exer6;
 
 import java.math.BigDecimal;
 
-public class ContaPoupanca extends ContaBancaria{
-    private double taxaDeOperacao;
+public class ContaPoupanca extends Conta {
+    private final BigDecimal valorTaxaOperacao;
 
-    public ContaPoupanca(String numeroConta,
-                         BigDecimal saldo) {
-        super(numeroConta, saldo);
+    public ContaPoupanca(String numeroConta, BigDecimal valorTaxaOperacao) {
+        super(numeroConta);
+        this.valorTaxaOperacao = BigDecimalUtil.zeroIfNull(valorTaxaOperacao);
     }
 
-    public double getTaxaDeOperacao() {
-        return taxaDeOperacao;
+    public BigDecimal getValorTaxaOperacao() {
+        return valorTaxaOperacao;
     }
 
     @Override
     public void sacar(BigDecimal valor) {
-        taxaDeOperacao = 50;
-        if (getSaldo().compareTo(valor) >= 0) {
-            setSaldo(getSaldo().subtract(valor).subtract(BigDecimal.valueOf(taxaDeOperacao)));
-            System.out.println("Taxa de saque: " + taxaDeOperacao);
+        BigDecimal valorTransacao = valor.add(valorTaxaOperacao);
+        if (BigDecimalUtil.isMaiorOuIgual(valorSaldo, valorTransacao)) {
+            valorSaldo = valorSaldo.subtract(valorTransacao);
+            System.out.println("Saque realizado com sucesso!");
         } else {
-            System.out.println("O limite estourou e voce nao tem mais nada!");
+            System.out.println("Saldo insuficiente.");
         }
     }
 
     @Override
     public void depositar(BigDecimal valor) {
-        taxaDeOperacao = 100;
-        setSaldo(getSaldo().add(valor).subtract(BigDecimal.valueOf(taxaDeOperacao)));
-        System.out.println("Taxa de Deposito: " + taxaDeOperacao);
+        valorSaldo = valorSaldo.add(valor).subtract(valorTaxaOperacao);
+        System.out.println("Deposito realizado com sucesso!");
+    }
+
+    @Override
+    public String toString() {
+        return "Conta Poupanca{" +
+                "Número='" + getNumeroConta() +
+                ", Saldo=" + BigDecimalUtil.setScale(valorSaldo) +
+                ", Taxa por Operação=" + BigDecimalUtil.setScale(valorTaxaOperacao) +
+                '}';
+    }
+
+    @Override
+    public void mostrarDados() {
+        System.out.println(toString());
+
     }
 }
