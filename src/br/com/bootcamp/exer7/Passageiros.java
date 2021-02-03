@@ -1,15 +1,15 @@
-package br.com.bootcamp.model;
+package br.com.bootcamp.exer7;
 
-public class Livro {
+public class Passageiros {
     private String nome;
     private Integer id;
 
-    public Livro(String nome, Integer id) {
+    public Passageiros(String nome, Integer id) {
         this.nome = nome;
         this.id = id;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

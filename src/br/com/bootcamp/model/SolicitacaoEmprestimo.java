@@ -1,6 +1,8 @@
 package br.com.bootcamp.model;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Objects;
 
 public class SolicitacaoEmprestimo {
     private Aluno aluno;
@@ -12,12 +14,7 @@ public class SolicitacaoEmprestimo {
         this.aluno = aluno;
         this.livro = livro;
         this.data = data;
-    }
 
-    public void solicitaEmp(Emprestimo emp){
-            System.out.println("Nome:" + aluno.getNome());
-            System.out.println("Data: " + emp.getDataEmprestimo());
-            System.out.println("Livro: " + livro.getNome());
     }
 
     public Aluno getAluno() {
@@ -44,11 +41,54 @@ public class SolicitacaoEmprestimo {
         this.data = data;
     }
 
-    public Emprestimo getEmprestimo() {
-        return emprestimo;
+    public void gerarEmprestimo() {
+        if (gerouEmprestimo()) {
+            System.out.println("Já existe um empréstimo gerado para essa solicitação.");
+        } else {
+            emprestimo = new Emprestimo();
+            System.out.println("Empréstimo do livro " + livro.getId() + "-" + livro.getNome() + " gerado com sucesso!");
+        }
     }
 
-    public void setEmprestimo(Emprestimo emprestimo) {
-        this.emprestimo = emprestimo;
+    public void devolverEmprestimo() {
+        if (gerouEmprestimo()) {
+            if (emprestimo.foiDevolvido()) {
+                System.out.println("Este empréstimo já foi devolvido.");
+            } else {
+                emprestimo.devolver();
+                System.out.println("Empréstimo do livro " + livro.getId() + "-" + livro.getNome() + " devolvido com sucesso!");
+            }
+        } else {
+            System.out.println("Não existe empréstimo para ser devolvido.");
+        }
+    }
+
+    private boolean gerouEmprestimo() {
+        return emprestimo != null;
+    }
+
+    private boolean ehMesmoLivro(Livro livro) {
+        return Objects.equals(this.livro.getId(), livro.getId());
+    }
+
+    public boolean existeEmprestimoEmAberto(Livro livro) {
+        return ehMesmoLivro(livro)
+                && gerouEmprestimo()
+                && !emprestimo.foiDevolvido();
+    }
+
+    @Override
+    public String toString() {
+        boolean gerouEmprestimo = gerouEmprestimo();
+        StringBuilder texto = new StringBuilder("Solicitação Emprestimo{")
+                .append("Aluno = ").append(aluno)
+                .append(", Livro = ").append(livro)
+                .append(", Data = ").append(data.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")))
+                .append(", Gerou emprestimo? ").append(gerouEmprestimo ? "Sim" : "Não");
+        if (gerouEmprestimo) {
+            texto.append(", Foi devolvido? ").append(emprestimo.foiDevolvido() ? "Sim" : "Não");
+        }
+        texto.append("}");
+        return texto.toString();
     }
 }

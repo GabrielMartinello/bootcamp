@@ -3,13 +3,13 @@ package br.com.bootcamp.model;
 import java.time.LocalDate;
 
 public class Emprestimo {
-    private LocalDate dataEmprestimo;
+    private boolean devolvido;
 
-    public LocalDate getDataEmprestimo() {
-        return dataEmprestimo;
+    public void devolver() {
+        this.devolvido = true;
     }
 
-    public void setDataEmprestimo(LocalDate dataEmprestimo) {
-        this.dataEmprestimo = dataEmprestimo;
+    public boolean foiDevolvido() {
+        return devolvido;
     }
 }
