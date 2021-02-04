@@ -2,133 +2,133 @@ package br.com.bootcamp.exer9.model;
 
 import br.com.bootcamp.exer9.exceptions.*;
 
+import java.math.BigDecimal;
+
 public class Carro {
-    private Propretario propretario;
-    private String chassi;
-    private Integer velocidadeMax;
+    private final String modelo;
+    private final String cor;
+    private final Marca marca;
+    private final String chassi;
+    private final Propretario proprietario;
+    private final Integer velocidadeMaxima;
+    private final Integer numeroPortas;
+    private final Integer numeroMarchas;
+    private final BigDecimal quantidadeCombustivel;
     private Integer velocidadeAtual;
-    private Integer numeroPortas;
-    private Integer numeroMarchas;
-    private Double quantidadeComb;
-    private Marca marca;
+    private Integer marchaAtual;
 
 
-    public Carro(Double quantidadeComb,
-                 Propretario propretario,
-                 Integer velocidadeAtual) {
-        this.quantidadeComb = quantidadeComb;
-        this.propretario = propretario;
-        this.velocidadeAtual = velocidadeAtual;
-        this.velocidadeMax = 60;
-        this.numeroMarchas = 6;
-    }
+    public Carro(String modelo,
+                 String cor,
+                 Marca marca,
+                 String chassi,
+                 Propretario proprietario,
+                 Integer velocidadeMaxima,
+                 Integer numeroPortas,
+                 Integer numeroMarchas,
+                 BigDecimal quantidadeCombustivel,
+                 Integer velocidadeAtual,
+                 Integer marchaAtual) {
+        this.modelo = modelo;
+        this.cor = cor;
+        this.marca = marca;
+        this.chassi = chassi;
+        this.proprietario = proprietario;
+        this.velocidadeMaxima = velocidadeMaxima;
+        this.numeroPortas = numeroPortas;
+        this.numeroMarchas = numeroMarchas;
+        this.quantidadeCombustivel = quantidadeCombustivel;
+        this.velocidadeAtual = 0;
+        this.marchaAtual = 0;
 
-    public void autonomia(Double consumoMedio) {
-        double autonomia = consumoMedio * quantidadeComb;
-        System.out.println("Autonomia: " + autonomia);
-    }
-
-    public void daRe() {
-        if(velocidadeAtual > 0) {
-            throw new ReException();
+        if(quantidadeCombustivel == null) {
+            throw new CarroException("A quantidade de comb é obrigatoria");
         }
-        velocidadeAtual = 0;
-        System.out.println("Dando ré");
+
+        if(proprietario == null) {
+            throw new CarroException("O proprietário é obrigatório");
+        }
+
+    }
+
+
+    public BigDecimal calcularAutonomia(BigDecimal consumoMedio) {
+        return consumoMedio.multiply(quantidadeCombustivel);
     }
 
     public void acelera() {
-        if ((velocidadeAtual > velocidadeMax)) {
+        if ((velocidadeAtual.equals(velocidadeMaxima))) {
             throw new AceleraException();
         }
         velocidadeAtual += 1;
-        System.out.println("A vida não tem mais sentido");
+        System.out.println("A vida não tem mais sentido" + velocidadeAtual);
     }
 
     public void freia() {
-        if (velocidadeAtual == 0) {
-            throw new FreiaException();
-        }
-        velocidadeAtual -= 1;
+        velocidadeAtual = 0;
         System.out.println("Errr seguraaa grudei nos freios");
     }
 
     public void trocarDeMarcha() {
-        if(numeroMarchas == 0) {
-            throw new AumentaMarchaException();
+        if(marchaAtual.equals(numeroMarchas)) {
+            throw new CarroTrocaMarchaException("Já está no min");
         }
-        numeroMarchas += 1;
+        marchaAtual += 1;
         System.out.println("Ran dan dan aumentou uma marcha: " + numeroMarchas);
     }
 
     public void reduzirMarcha() {
-        if(numeroMarchas == 0) {
-            throw new DiminiuMarchaException();
+        if(marchaAtual == 1 && velocidadeAtual > 0) {
+            throw new CarroException("O re so pode ser engatado na marcha 0");
         }
-        numeroMarchas -= 1;
-        System.out.println("Ta em ponto morto nao andaa");
+        if(marchaAtual == 0) {
+            throw new CarroTrocaMarchaException("Esta na marcha min");
+        }
+        marchaAtual -= 1;
+        System.out.println("Ta em ponto morto nao andaa " + marchaAtual);
     }
 
     public Marca getMarca() {
         return marca;
     }
 
-    public void setMarca(Marca marca) {
-        this.marca = marca;
+    public String getModelo() {
+        return modelo;
+    }
+
+    public String getCor() {
+        return cor;
     }
 
     public String getChassi() {
         return chassi;
     }
 
-    public void setChassi(String chassi) {
-        this.chassi = chassi;
+    public Propretario getProprietario() {
+        return proprietario;
     }
 
-    public Propretario getPropretario() {
-        return propretario;
-    }
-
-    public void setPropretario(Propretario propretario) {
-        this.propretario = propretario;
-    }
-
-    public Integer getVelocidadeMax() {
-        return velocidadeMax;
-    }
-
-    public void setVelocidadeMax(Integer velocidadeMax) {
-        this.velocidadeMax = velocidadeMax;
+    public Integer getVelocidadeMaxima() {
+        return velocidadeMaxima;
     }
 
     public Integer getVelocidadeAtual() {
         return velocidadeAtual;
     }
 
-    public void setVelocidadeAtual(Integer velocidadeAtual) {
-        this.velocidadeAtual = velocidadeAtual;
-    }
-
     public Integer getNumeroPortas() {
         return numeroPortas;
-    }
-
-    public void setNumeroPortas(Integer numeroPortas) {
-        this.numeroPortas = numeroPortas;
     }
 
     public Integer getNumeroMarchas() {
         return numeroMarchas;
     }
 
-    public void setNumeroMarchas(Integer numeroMarchas) {
-        this.numeroMarchas = numeroMarchas;
+    public Integer getMarchaAtual() {
+        return marchaAtual;
     }
 
-    public Double getQuantidadeComb() {
-        return quantidadeComb;
-    }
-
-    public void setQuantidadeComb(Double quantidadeComb) {
-        this.quantidadeComb = quantidadeComb;
+    public BigDecimal getQuantidadeCombustivel() {
+        return quantidadeCombustivel;
     }
 }

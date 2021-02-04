@@ -3,41 +3,29 @@ package br.com.bootcamp.exer9.model;
 import java.time.LocalDate;
 
 public class Marca {
-    private String modelo;
-    private String cor;
-    private LocalDate ano;
-    private String marca;
+    private String nome;
+    private Integer ano;
     private int id;
 
-    public String getModelo() {
-        return modelo;
+    public Marca(String nome, Integer ano, Integer id) {
+        this.nome = nome;
+        this.ano = ano;
+        this.id = id;
     }
 
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
-    }
-
-    public String getCor() {
-        return cor;
-    }
-
-    public void setCor(String cor) {
-        this.cor = cor;
-    }
-
-    public LocalDate getAno() {
+    public Integer getAno() {
         return ano;
     }
 
-    public void setAno(LocalDate ano) {
+    public void setAno(Integer ano) {
         this.ano = ano;
     }
 
     public String getMarca() {
-        return marca;
+        return nome;
     }
 
     public void setMarca(String marca) {
-        this.marca = marca;
+        this.nome = marca;
     }
 }
