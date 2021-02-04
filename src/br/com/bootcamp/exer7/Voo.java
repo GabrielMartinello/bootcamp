@@ -21,14 +21,14 @@ public class Voo {
         this.quantMaxPassageiros = quantMaxPassageiros;
     }
 
-    public Integer primeiroLivre(Integer assentos) {
-        int posicao = 0;
-        for(int i = 0;i < passageiros.size(); i++) {
-
-
-        }
-
-    }
+//    public Integer primeiroLivre(Integer assentos) {
+//        int posicao = 0;
+//        for(int i = 0;i < passageiros.size(); i++) {
+//
+//
+//        }
+//
+//    }
 
     public void proximoLivre() {
 

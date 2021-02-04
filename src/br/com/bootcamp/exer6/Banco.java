@@ -15,14 +15,19 @@ public class Banco implements Imprimivel{
     public void insere(Conta conta) {
         if (!contaExiste(conta)) {
             contaBancarias.add(conta);
+            System.out.println("Conta Adicionada!");
         }else {
             System.out.println("Esta Conta já existe!");
         }
     }
 
     public void remove(Conta conta) {
-        contaBancarias.remove(conta);
-        System.out.println("Conta removida com sucesso!");
+        boolean removido = contaBancarias.remove(conta);
+        System.out.println("Conta: " + conta + " Removida");
+
+
+
+        System.out.println(removido ? "Conta removida com sucesso!" : "Conta nao existe");
     }
 
     public Conta procuraContaNaLista(String numeroConta) {
@@ -46,6 +51,11 @@ public class Banco implements Imprimivel{
 
     @Override
     public void mostrarDados() {
+        for (Conta conta: contaBancarias
+             ) {
+            System.out.println(contaBancarias.toString());
+
+        }
 
     }
 }

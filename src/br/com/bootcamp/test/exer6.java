@@ -17,17 +17,17 @@ public class exer6 {
         Relatorio relatorio = new Relatorio();
         Banco banco = new Banco();
         ContaCorrente contaCorrente = new ContaCorrente("001", BigDecimal.valueOf(50));
+        ContaCorrente contaCorrente02 = new ContaCorrente("002", BigDecimal.valueOf(50));
+        ContaCorrente contaCorrente03 = new ContaCorrente("003", BigDecimal.valueOf(50));
         System.out.println("-------------------------------------");
 
-        banco.insere(
-                new ContaCorrente("101", BigDecimal.valueOf(50))
-        );
+        banco.insere(contaCorrente);
+        banco.insere(contaCorrente02);
+        banco.insere(contaCorrente03);
 
-        banco.procuraContaNaLista("101");
         banco.remove(contaCorrente);
+        banco.remove(contaCorrente02);
         System.out.println("------------------------------------");
-
-
     }
 }
 
