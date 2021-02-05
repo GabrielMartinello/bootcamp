@@ -1,4 +1,4 @@
-package br.com.bootcamp.exer12.cliente;
+package br.com.bootcamp.exer12.vendedor;
 
 import br.com.bootcamp.exer12.exceptions.CampoNullException;
 

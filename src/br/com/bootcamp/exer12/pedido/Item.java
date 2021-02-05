@@ -24,6 +24,26 @@ public class Item {
         this.valorUnitario = valorUnitario;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public void setSimNao(char simNao) {
+        this.simNao = simNao;
+    }
+
+    public void setQuantidadeEmEstoque(Integer quantidadeEmEstoque) {
+        this.quantidadeEmEstoque = quantidadeEmEstoque;
+    }
+
+    public void setValorUnitario(Double valorUnitario) {
+        this.valorUnitario = valorUnitario;
+    }
+
     public Long getId() {
         return id;
     }

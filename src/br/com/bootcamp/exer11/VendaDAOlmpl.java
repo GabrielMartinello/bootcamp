@@ -6,6 +6,7 @@ import java.util.List;
 public interface VendaDAOlmpl {
 
     List<Venda> buscarTodos();
+
     Venda buscar(Long id);
 
     Venda inserir(Venda objeto);
