@@ -1,10 +1,10 @@
 package br.com.bootcamp.exer10;
 
 public class Resultado {
-    private String especie;
+    private Especie especie;
     private Integer quantidade;
 
-    public Resultado(String especie, Integer quantidade) {
+    public Resultado(Especie especie, Integer quantidade) {
         if(quantidade == null) {
             System.out.println("O campo é ''Quantidade'' obrigatório! ");
         }
@@ -15,11 +15,11 @@ public class Resultado {
         this.quantidade = quantidade;
     }
 
-    public String getEspecie() {
+    public Especie getEspecie() {
         return especie;
     }
 
-    public void setEspecie(String especie) {
+    public void setEspecie(Especie especie) {
         this.especie = especie;
     }
 

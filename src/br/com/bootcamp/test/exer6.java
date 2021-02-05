@@ -27,6 +27,7 @@ public class exer6 {
 
         banco.remove(contaCorrente);
         banco.remove(contaCorrente02);
+        banco.mostrarDados();
         System.out.println("------------------------------------");
     }
 }
