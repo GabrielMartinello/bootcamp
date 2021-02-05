@@ -1,19 +1,22 @@
 package br.com.bootcamp.exer10;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ContabilizarEspecies {
 
-    public List<Resultado> resultado(List<Animal> animais, EspeciesUtil especiesUtil) {
-        List<Especie> especies = especiesUtil.classificar(animais);
-        for (int i = 0; i < especies.size(); i++) {
-            especies.get(i);
-            for(int j = 0; j < animais.size(); j++) {
-                especiesUtil.filtrar(animais, especies.get(i));
-            }
+    public List<Resultado> getResultados(List<Animal> animals,
+                                            EspeciesUtil especiesUtil) {
+
+        List<Resultado> resultados = new ArrayList<>();
+        List<Especie> especiesEncontradas = especiesUtil.classificar(animals);
+
+        for (Especie especie : especiesEncontradas) {
+            List<Animal> animaisDaEspecie = especiesUtil.filtrar(animals, especie);
+            int quantidade = animaisDaEspecie.size();
+            resultados.add(new Resultado(especie, quantidade));
         }
-
-    return null;
-
+        return resultados;
     }
+
 }

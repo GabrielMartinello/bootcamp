@@ -1,4 +1,4 @@
-package br.com.bootcamp.exer10;
+package br.com.bootcamp.exer11;
 
 import br.com.bootcamp.exer11.Venda;
 import br.com.bootcamp.exer11.VendaDAO;

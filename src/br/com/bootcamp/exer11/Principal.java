@@ -1,7 +1,5 @@
 package br.com.bootcamp.exer11;
 
-import br.com.bootcamp.exer10.VendaServiceLmpl;
-
 import java.time.LocalDate;
 import java.time.Month;
 

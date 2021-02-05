@@ -1,33 +1,20 @@
 package br.com.bootcamp.exer10;
 
 public class Resultado {
-    private String especie;
-    private Integer quantidade;
 
-    public Resultado(String especie, Integer quantidade) {
-        if(quantidade == null) {
-            System.out.println("O campo é ''Quantidade'' obrigatório! ");
-        }
-        if(especie == null) {
-            System.out.println("O campo ''Especie'' é obrigatório!");;
-        }
+    private final Especie especie;
+    private final Integer quantidade;
+
+    public Resultado(Especie especie, Integer quantidade) {
         this.especie = especie;
         this.quantidade = quantidade;
     }
 
-    public String getEspecie() {
-        return especie;
-    }
-
-    public void setEspecie(String especie) {
-        this.especie = especie;
-    }
-
-    public Integer getQuantidade() {
-        return quantidade;
-    }
-
-    public void setQuantidade(Integer quantidade) {
-        this.quantidade = quantidade;
+    @Override
+    public String toString() {
+        return "Resultado{" +
+                "especie=" + especie +
+                ", quantidade=" + quantidade +
+                '}';
     }
 }
