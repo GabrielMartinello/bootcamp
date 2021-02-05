@@ -1,4 +1,6 @@
-package br.com.bootcamp.model;
+package br.com.bootcamp.exer2;
+
+import br.com.bootcamp.exer2.GrupoDePessoas;
 
 import java.time.LocalDate;
 

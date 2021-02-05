@@ -1,7 +1,7 @@
 package br.com.bootcamp.test;
 
-import br.com.bootcamp.model.GrupoDePessoas;
-import br.com.bootcamp.model.Pessoa2;
+import br.com.bootcamp.exer2.GrupoDePessoas;
+import br.com.bootcamp.exer2.Pessoa2;
 
 import java.time.LocalDate;
 import java.time.Month;

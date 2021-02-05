@@ -1,4 +1,4 @@
-package br.com.bootcamp.model;
+package br.com.bootcamp.exer2;
 
 import java.time.LocalDate;
 import java.time.Period;
