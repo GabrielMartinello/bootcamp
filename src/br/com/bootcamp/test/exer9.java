@@ -1,4 +1,4 @@
-package br.com.bootcamp.exer9.test;
+package br.com.bootcamp.test;
 
 import br.com.bootcamp.exer6.BigDecimalUtil;
 import br.com.bootcamp.exer9.model.Carro;

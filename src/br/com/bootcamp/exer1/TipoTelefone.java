@@ -1,13 +1,13 @@
-package br.com.bootcamp.model;
+package br.com.bootcamp.exer1;
 
-public enum TipoTelefoneExer1 {
+public enum TipoTelefone {
     COMERCIAL("Comercial"),
     RESIDENCIAL("Residencial"),
     CELULAR("Celular");
 
     private String descricao;
 
-    TipoTelefoneExer1(String descricao) {
+    TipoTelefone(String descricao) {
         this.descricao = descricao;
     }
 

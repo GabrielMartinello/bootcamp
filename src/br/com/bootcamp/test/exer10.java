@@ -1,12 +1,13 @@
-package br.com.bootcamp.exer10;
+package br.com.bootcamp.test;
 
+import br.com.bootcamp.exer10.*;
 import br.com.bootcamp.exer10.aves.Coruja;
 import br.com.bootcamp.exer10.mamiferos.Cachorro;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Teste {
+public class exer10 {
     public static void main(String[] args) {
         ContabilizarEspecies contabilizarEspecies = new ContabilizarEspecies();
         List<Animal> animals = new ArrayList<>();

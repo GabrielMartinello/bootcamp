@@ -1,4 +1,4 @@
-package br.com.bootcamp.exer8.test;
+package br.com.bootcamp.test;
 
 import br.com.bootcamp.exer8.model.Elevator;
 

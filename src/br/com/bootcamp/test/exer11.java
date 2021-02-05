@@ -1,9 +1,13 @@
-package br.com.bootcamp.exer11;
+package br.com.bootcamp.test;
+
+import br.com.bootcamp.exer11.Venda;
+import br.com.bootcamp.exer11.VendaDAO;
+import br.com.bootcamp.exer11.VendaServiceLmpl;
 
 import java.time.LocalDate;
 import java.time.Month;
 
-public class Principal {
+public class exer11 {
     public static void main(String[] args) {
 
         VendaServiceLmpl vendaService = new VendaServiceLmpl(new VendaDAO());
